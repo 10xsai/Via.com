@@ -24,9 +24,7 @@ import org.testng.annotations.BeforeMethod;
 
 public class RunnerSignUp extends ReadSignUpExcelFile {
 
-	public RunnerSignUp
-
-	(String pathWithFileName) {
+	public RunnerSignUp(String pathWithFileName) {
 		super(pathWithFileName);
 	}
 
@@ -98,7 +96,7 @@ public class RunnerSignUp extends ReadSignUpExcelFile {
 
 	@DataProvider
 	public Object[][] dp() {
-		ReadSignUpExcelFile ex = new ReadSignUpExcelFile("C://Users//sony vaio//Desktop//Signup.xlsx");
+		ReadSignUpExcelFile ex = new ReadSignUpExcelFile("D:\\win\\Downloads\\Signup.xlsx");
 		Object data[][] = new Object[4][4];
 
 		for (int i = 1; i < ex.getLastRowNum("Sheet1") - 1; i++)
@@ -117,7 +115,7 @@ public class RunnerSignUp extends ReadSignUpExcelFile {
 	public void beforeTest() {
 
 		System.setProperty("webdriver.chrome.driver",
-				"C:\\Users\\sony vaio\\Downloads\\Selenium\\chromedriver_win32\\chromedriver.exe");
+				"D:\\win\\Downloads\\chromedriver_win32 (2)\\chromedriver.exe");
 		driver = new ChromeDriver();
 	}
 

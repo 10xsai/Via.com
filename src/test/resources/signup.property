@@ -1,7 +1,8 @@
 #site url
 
 url=https://in.via.com/
- 
+cpath=src\\test\\resources\\drivers\\chromedriver.exe
+excelUrl=src\\test\\resources\\dataSheets\\Via.com_DataDrivenTest.xlsx
  
 #Signin button xpath
 signin=//div[contains(text(),'Sign In')]
@@ -11,16 +12,16 @@ signup=//span[normalize-space()='SIGN UP']
 
  
 #email id
-email=//input[@id='emailIdSignUp']
+emailid=//*[@id="emailIdSignUp"]
 
 #password id
- passwordid=//input[@id='passwordSignUp']
+password=//*[@id="passwordSignUp"]
  
 #name id
-name=//input[@id='nameSignUp']
+name=//*[@id="nameSignUp"]
  
 #number id
-number=//input[@id='mobileNoSignUp']
+number=//*[@id="mobileNoSignUp"]
  
 #create account button id
-createaccountbuttonid=//input[@id='signUpValidate']
+createaccountbutton=//*[@id="signUpValidate"]

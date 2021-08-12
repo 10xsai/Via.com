@@ -53,19 +53,19 @@ public class dummy extends ReadSignUpExcelFile {
 		driver.findElement(By.xpath(prop.getProperty("signin"))).click();
 		driver.findElement(By.xpath(prop.getProperty("signup"))).click();
 
-		driver.findElement(By.xpath(prop.getProperty("createaccount"))).click();
+//		driver.findElement(By.xpath(prop.getProperty("createaccount"))).click();
 
 		driver.manage().timeouts().implicitlyWait(8, TimeUnit.SECONDS);
 
-		driver.findElement(By.id(prop.getProperty("emailid"))).sendKeys(email); // Please enter first name using letters
+		driver.findElement(By.xpath(prop.getProperty("emailid"))).sendKeys(email); // Please enter first name using letters
 																				// only.
-		driver.findElement(By.id(prop.getProperty("passwordid"))).sendKeys(pwd);
-		driver.findElement(By.id(prop.getProperty("name"))).sendKeys(name);
-		driver.findElement(By.id(prop.getProperty("number")));
+		driver.findElement(By.xpath(prop.getProperty("password"))).sendKeys(pwd);
+		driver.findElement(By.xpath(prop.getProperty("name"))).sendKeys(name);
+		driver.findElement(By.xpath(prop.getProperty("number"))).sendKeys(number);
 
-		driver.findElement(By.id(prop.getProperty("createaccountbuttonid"))).click();
+		driver.findElement(By.xpath(prop.getProperty("createaccountbutton"))).click();
 
-		driver.manage().timeouts().implicitlyWait(8, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 		
 		  if(driver.findElement(By.id("create_first_name_error")).isDisplayed()) {
 		  System.out.println(driver.findElement(By.id("create_first_name_error")).
@@ -96,15 +96,25 @@ public class dummy extends ReadSignUpExcelFile {
 	
 	@DataProvider
 	public Object[][] dp() {
-		ReadSignUpExcelFile ex = new ReadSignUpExcelFile("C://Users//sony vaio//Desktop//Signup.xlsx");
-		Object data[][] = new Object[4][4];
+		Properties prop = new Properties();
+		try {
+			prop.load(new FileInputStream("src/test/resources/signup.property"));
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		ReadSignUpExcelFile ex = new ReadSignUpExcelFile(prop.getProperty("excelUrl"));
+		Object data[][] = new Object[6][4];
 
-		for (int i = 1; i < 2; i++)
+		for (int i = 1; i < ex.getLastRowNum("Sign up")-1; i++)
 
 		{
 			for (int j = 0; j < 4; j++) {
-				System.out.println(ex.readData("Sheet1", i, j));
-				data[i][j] = ex.readData("Sheet1", i, j);
+				System.out.println(ex.readData("Sign up", i, j));
+				data[i-1][j] = ex.readData("Sign up", i, j);
 			}
 		}
 
@@ -113,15 +123,23 @@ public class dummy extends ReadSignUpExcelFile {
 
 	@BeforeMethod
 	public void beforeTest() {
-
-		System.setProperty("webdriver.chrome.driver",
-				"C:\\Users\\sony vaio\\Downloads\\Selenium\\chromedriver_win32\\chromedriver.exe");
+		Properties prop = new Properties();
+		try {
+			prop.load(new FileInputStream("src/test/resources/signup.property"));
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		System.setProperty("webdriver.chrome.driver", prop.getProperty("cpath"));
 		driver = new ChromeDriver();
 	}
 
 	@AfterMethod
-	public void afterTest() {
-
+	public void afterTest() throws Exception {
+		Thread.sleep(2000);
 		 driver.close();
 	}
 
