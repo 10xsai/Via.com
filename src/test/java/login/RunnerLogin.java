@@ -1,4 +1,4 @@
-package signup;
+package login;
 
 import org.testng.annotations.Test;
 import base.ExcelFramework;
@@ -22,21 +22,19 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeMethod;
 
-public class RunnerSignup extends ExcelFramework {
+public class RunnerLogin extends ExcelFramework {
 
-	public RunnerSignup
-
-	(String pathWithFileName) {
+	public RunnerLogin(String pathWithFileName) {
 		super(pathWithFileName);
 	}
 
 	public WebDriver driver;
 
 	@Test(dataProvider = "dp")
-	public void f(String email, String pwd, String name, String number) {
+	public void f(String email, String pwd) {
 		Properties prop = new Properties();
 		try {
-			prop.load(new FileInputStream("src/test/resources/properties/signup.property"));
+			prop.load(new FileInputStream("src/test/resources/properties/login.property"));
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -51,19 +49,15 @@ public class RunnerSignup extends ExcelFramework {
 		driver.findElement(By.id("wzrk-cancel")).click();
 
 		driver.findElement(By.xpath(prop.getProperty("signin"))).click();
-		driver.findElement(By.xpath(prop.getProperty("signup"))).click();
 
-//		driver.findElement(By.xpath(prop.getProperty("createaccount"))).click();
 
 		driver.manage().timeouts().implicitlyWait(8, TimeUnit.SECONDS);
 
 		driver.findElement(By.xpath(prop.getProperty("emailid"))).sendKeys(email); // Please enter first name using letters
 																				// only.
 		driver.findElement(By.xpath(prop.getProperty("password"))).sendKeys(pwd);
-		driver.findElement(By.xpath(prop.getProperty("name"))).sendKeys(name);
-		driver.findElement(By.xpath(prop.getProperty("number"))).sendKeys(number);
 
-		driver.findElement(By.xpath(prop.getProperty("createaccountbutton"))).click();
+		driver.findElement(By.xpath(prop.getProperty("loginbutton"))).click();
 
 		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 		
@@ -98,7 +92,7 @@ public class RunnerSignup extends ExcelFramework {
 	public Object[][] dp() {
 		Properties prop = new Properties();
 		try {
-			prop.load(new FileInputStream("src/test/resources/properties/signup.property"));
+			prop.load(new FileInputStream("src/test/resources/properties/login.property"));
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -107,14 +101,15 @@ public class RunnerSignup extends ExcelFramework {
 			e.printStackTrace();
 		}
 		ExcelFramework ex = new ExcelFramework(prop.getProperty("excelUrl"));
-		Object data[][] = new Object[6][4];
+		int rowCount = ex.getLastRowNum("Login");
+		Object data[][] = new Object[rowCount][2];
 
-		for (int i = 1; i < ex.getLastRowNum("Sign up")-1; i++)
+		for (int i = 1; i < rowCount -1; i++)
 
 		{
-			for (int j = 0; j < 4; j++) {
-				System.out.println(ex.readData("Sign up", i, j));
-				data[i-1][j] = ex.readData("Sign up", i, j);
+			for (int j = 0; j < 2; j++) {
+				System.out.println(ex.readData("Login", i, j));
+				data[i-1][j] = ex.readData("Login", i, j);
 			}
 		}
 
@@ -125,7 +120,7 @@ public class RunnerSignup extends ExcelFramework {
 	public void beforeTest() {
 		Properties prop = new Properties();
 		try {
-			prop.load(new FileInputStream("src/test/resources/properties/signup.property"));
+			prop.load(new FileInputStream("src/test/resources/properties/login.property"));
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
