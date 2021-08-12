@@ -10,7 +10,6 @@ import org.testng.annotations.BeforeTest;
 
 public class Base {
 	public WebDriver driver;
-	public Properties props = new Properties();
 
 	
 	@BeforeTest
@@ -26,7 +25,7 @@ public class Base {
 		
 		System.setProperty("webdriver.chrome.driver", props.getProperty("cpath"));
 		ChromeDriver driver = new ChromeDriver();
-		
+		driver.get(props.getProperty("url"));
 	}
 	
 	@AfterTest
