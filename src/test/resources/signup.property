@@ -1,0 +1,26 @@
+#site url
+
+url=https://in.via.com/
+ 
+ 
+#Signin button xpath
+signin=//div[contains(text(),'Sign In')]
+
+#Signup button xpath
+signup=//span[normalize-space()='SIGN UP']
+
+ 
+#email id
+email=//input[@id='emailIdSignUp']
+
+#password id
+ passwordid=//input[@id='passwordSignUp']
+ 
+#name id
+name=//input[@id='nameSignUp']
+ 
+#number id
+number=//input[@id='mobileNoSignUp']
+ 
+#create account button id
+createaccountbuttonid=//input[@id='signUpValidate']
