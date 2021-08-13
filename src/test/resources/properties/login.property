@@ -1,0 +1,21 @@
+#site url
+
+url=https://in.via.com/
+cpath=src\\test\\resources\\drivers\\chromedriver.exe
+excelUrl=src\\test\\resources\\dataSheets\\Via.com_DataDrivenTest.xlsx
+ 
+# Login button xpath
+signin=//div[contains(text(),'Sign In')]
+
+# Login button xpath
+signup=//span[normalize-space()='SIGN UP']
+
+ 
+#email id
+emailid=//*[@id="loginIdText"]
+
+#password id
+password=//*[@id="passwordText"]
+
+# login button id
+loginbutton=//*[@id="loginValidate"]

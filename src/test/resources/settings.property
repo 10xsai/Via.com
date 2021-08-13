@@ -1,4 +1,0 @@
-browser=chrome
-url=https://in.via.com/
-cpath=src\\test\\resources\\drivers\\chromedriver.exe
-excelUrl=src\\test\\resources\\dataSheets\\Via.com_DataDrivenTest.xlsx
