@@ -3,13 +3,13 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="signup.dummy">
+      <class name="multicity.RunnerMultiCity">
         <methods>
-          <include name="afterTest"/>
-          <include name="beforeTest"/>
           <include name="f"/>
+          <include name="beforeTest"/>
+          <include name="afterTest"/>
         </methods>
-      </class> <!-- signup.dummy -->
+      </class> <!-- multicity.RunnerMultiCity -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

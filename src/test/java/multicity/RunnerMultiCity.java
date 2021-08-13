@@ -1,4 +1,4 @@
-package login;
+package multicity;
 
 import org.testng.annotations.Test;
 import base.ExcelFramework;
@@ -22,19 +22,31 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeMethod;
 
-public class RunnerLogin extends ExcelFramework {
+public class RunnerMultiCity extends ExcelFramework {
 
-	public RunnerLogin(String pathWithFileName) {
+	public RunnerMultiCity(String pathWithFileName) {
 		super(pathWithFileName);
 	}
 
 	public WebDriver driver;
 
 	@Test(dataProvider = "dp")
-	public void f(String email, String pwd) {
+	public void f(
+			String from, 
+			String to, 
+			String departureDate, 
+			String adult, 
+			String infant, 
+			String children, 
+			String title, 
+			String firstname, 
+			String lastname, 
+			String mobile, 
+			String email) {
+		
 		Properties prop = new Properties();
 		try {
-			prop.load(new FileInputStream("src/test/resources/properties/login.property"));
+			prop.load(new FileInputStream("src/test/resources/properties/multicity.property"));
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -48,18 +60,21 @@ public class RunnerLogin extends ExcelFramework {
 		driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
 		driver.findElement(By.id("wzrk-cancel")).click();
 
-		driver.findElement(By.xpath(prop.getProperty("signin"))).click();
 
-
-		driver.manage().timeouts().implicitlyWait(8, TimeUnit.SECONDS);
-
-		driver.findElement(By.xpath(prop.getProperty("emailid"))).sendKeys(email); // Please enter first name using letters
+		driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
+		
+		driver.findElement(By.xpath(prop.getProperty("multicitybtn"))).click();
+		
+		driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
+		
+		driver.findElement(By.xpath(prop.getProperty("from"))).sendKeys(email); // Please enter first name using letters
 																				// only.
-		driver.findElement(By.xpath(prop.getProperty("password"))).sendKeys(pwd);
+		driver.findElement(By.xpath(prop.getProperty("password"))).sendKeys(firstname);
 
 		driver.findElement(By.xpath(prop.getProperty("loginbutton"))).click();
 
 		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+		
 	}
 
 	
@@ -67,7 +82,7 @@ public class RunnerLogin extends ExcelFramework {
 	public Object[][] dp() {
 		Properties prop = new Properties();
 		try {
-			prop.load(new FileInputStream("src/test/resources/properties/login.property"));
+			prop.load(new FileInputStream("src/test/resources/properties/multicity.property"));
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -76,15 +91,15 @@ public class RunnerLogin extends ExcelFramework {
 			e.printStackTrace();
 		}
 		ExcelFramework ex = new ExcelFramework(prop.getProperty("excelUrl"));
-		int rowCount = ex.getLastRowNum("Login");
-		Object data[][] = new Object[rowCount][2];
+		int rowCount = ex.getLastRowNum("Multi city");
+		Object data[][] = new Object[rowCount][11];
 
 		for (int i = 1; i < rowCount -1; i++)
 
 		{
-			for (int j = 0; j < 2; j++) {
-				System.out.println(ex.readData("Login", i, j));
-				data[i-1][j] = ex.readData("Login", i, j);
+			for (int j = 0; j < 11; j++) {
+				System.out.println(ex.readData("Multi city", i, j));
+				data[i-1][j] = ex.readData("Multi city", i, j);
 			}
 		}
 
@@ -95,7 +110,7 @@ public class RunnerLogin extends ExcelFramework {
 	public void beforeTest() {
 		Properties prop = new Properties();
 		try {
-			prop.load(new FileInputStream("src/test/resources/properties/login.property"));
+			prop.load(new FileInputStream("src/test/resources/properties/multicity.property"));
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -114,16 +129,3 @@ public class RunnerLogin extends ExcelFramework {
 	}
 
 }
-
-/*
- * Error ID's
- * 
- * create_first_name_error create_last_name_error create_email_error
- * 
- * //h5[normalize-space()='Password must be at least 6 characters.'] //Relative
- * Xpath for error in password
- * 
- * //h5[normalize-space()='Passwords do not match.'] //Confirm password doesnt
- * match
- * 
- */

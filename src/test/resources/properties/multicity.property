@@ -1,0 +1,24 @@
+#site url
+
+url=https://in.via.com/
+cpath=src\\test\\resources\\drivers\\chromedriver.exe
+excelUrl=src\\test\\resources\\dataSheets\\Via.com_DataDrivenTest.xlsx
+
+# Multi-city button xpath
+multicitybtn=/html/body/div[4]/div[3]/div/form/div[3]/div/div[3]/label
+
+# Login button xpath
+signin=//div[contains(text(),'Sign In')]
+
+# Login button xpath
+signup=//span[normalize-space()='SIGN UP']
+
+ 
+#email id
+emailid=//*[@id="loginIdText"]
+
+#password id
+password=//*[@id="passwordText"]
+
+# login button id
+loginbutton=//*[@id="loginValidate"]

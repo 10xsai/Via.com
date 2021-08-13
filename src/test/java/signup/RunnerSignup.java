@@ -66,31 +66,6 @@ public class RunnerSignup extends ExcelFramework {
 		driver.findElement(By.xpath(prop.getProperty("createaccountbutton"))).click();
 
 		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
-		
-		  if(driver.findElement(By.id("create_first_name_error")).isDisplayed()) {
-		  System.out.println(driver.findElement(By.id("create_first_name_error")).
-		  getText()); }
-		  
-		  else if(driver.findElement(By.id("create_last_name_error")).isDisplayed()) {
-		  System.out.println(driver.findElement(By.id("create_last_name_error")).
-		  getText()); }
-		  
-		  else if(driver.findElement(By.id("create_email_error")).isDisplayed()) {
-		  System.out.println(driver.findElement(By.id("create_email_error")).getText())
-		  ; }
-		  
-		  
-		  else if(driver.findElement(By.
-		  xpath("//h5[normalize-space()='Password must be at least 6 characters.']")).
-		  isDisplayed()) { System.out.println(driver.findElement(By.
-		  xpath("//h5[normalize-space()='Password must be at least 6 characters.']")).
-		  getText()); }
-		  
-		  else if(driver.findElement(By.
-		  xpath("//input[@id='passwordSignUp']='Passwords do not match.']")).isDisplayed()) {
-		  System.out.println(driver.findElement(By.
-		  xpath("//input[@id='passwordSignUp']='Passwords do not match.']")).getText()); }
-		 
 	}
 
 	

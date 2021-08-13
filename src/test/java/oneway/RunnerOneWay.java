@@ -1,4 +1,4 @@
-package login;
+package oneway;
 
 import org.testng.annotations.Test;
 import base.ExcelFramework;
@@ -22,19 +22,31 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeMethod;
 
-public class RunnerLogin extends ExcelFramework {
+public class RunnerOneWay extends ExcelFramework {
 
-	public RunnerLogin(String pathWithFileName) {
+	public RunnerOneWay(String pathWithFileName) {
 		super(pathWithFileName);
 	}
 
 	public WebDriver driver;
 
 	@Test(dataProvider = "dp")
-	public void f(String email, String pwd) {
+	public void searchFlights(
+			String from, 
+			String to, 
+			String departureDate, 
+			String adults, 
+			String children, 
+			String infants, 
+			String title, 
+			String firstname, 
+			String lastname, 
+			String mobile, 
+			String email) throws InterruptedException {
+		
 		Properties prop = new Properties();
 		try {
-			prop.load(new FileInputStream("src/test/resources/properties/login.property"));
+			prop.load(new FileInputStream("src/test/resources/properties/oneway.property"));
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -48,18 +60,28 @@ public class RunnerLogin extends ExcelFramework {
 		driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
 		driver.findElement(By.id("wzrk-cancel")).click();
 
-		driver.findElement(By.xpath(prop.getProperty("signin"))).click();
+		driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
 
-
-		driver.manage().timeouts().implicitlyWait(8, TimeUnit.SECONDS);
-
-		driver.findElement(By.xpath(prop.getProperty("emailid"))).sendKeys(email); // Please enter first name using letters
-																				// only.
-		driver.findElement(By.xpath(prop.getProperty("password"))).sendKeys(pwd);
-
-		driver.findElement(By.xpath(prop.getProperty("loginbutton"))).click();
+		driver.findElement(By.xpath(prop.getProperty("from"))).sendKeys(from); // Please enter first name using letters
+		driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
+		driver.findElement(By.className("ui-menu-item")).click();
+		
+		driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
+		
+		driver.findElement(By.xpath(prop.getProperty("to"))).sendKeys(to); // Please enter first name using letters
+		Thread.sleep(2000);
+		Actions ac = new Actions(driver);
+		ac.sendKeys(Keys.ARROW_DOWN).sendKeys(Keys.ENTER).perform();
+		driver.findElement(By.className("ui-menu-item")).click();
+		
+//		driver.findElement(By.xpath(prop.getProperty("adults"))).click();
+//		driver.findElement(By.xpath(prop.getProperty("children"))).click();
+//		driver.findElement(By.xpath(prop.getProperty("infants"))).click();
+		
+		driver.findElement(By.xpath(prop.getProperty("searchflights"))).click();
 
 		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+		
 	}
 
 	
@@ -67,7 +89,7 @@ public class RunnerLogin extends ExcelFramework {
 	public Object[][] dp() {
 		Properties prop = new Properties();
 		try {
-			prop.load(new FileInputStream("src/test/resources/properties/login.property"));
+			prop.load(new FileInputStream("src/test/resources/properties/oneway.property"));
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -76,15 +98,15 @@ public class RunnerLogin extends ExcelFramework {
 			e.printStackTrace();
 		}
 		ExcelFramework ex = new ExcelFramework(prop.getProperty("excelUrl"));
-		int rowCount = ex.getLastRowNum("Login");
-		Object data[][] = new Object[rowCount][2];
+		int rowCount = ex.getLastRowNum("One way trip");
+		Object data[][] = new Object[rowCount][11];
 
-		for (int i = 1; i < rowCount -1; i++)
+		for (int i = 1; i < rowCount-1; i++)
 
 		{
-			for (int j = 0; j < 2; j++) {
-				System.out.println(ex.readData("Login", i, j));
-				data[i-1][j] = ex.readData("Login", i, j);
+			for (int j = 0; j < 11; j++) {
+				System.out.println(ex.readData("One way trip", i, j));
+				data[i-1][j] = ex.readData("One way trip", i, j);
 			}
 		}
 
@@ -95,7 +117,7 @@ public class RunnerLogin extends ExcelFramework {
 	public void beforeTest() {
 		Properties prop = new Properties();
 		try {
-			prop.load(new FileInputStream("src/test/resources/properties/login.property"));
+			prop.load(new FileInputStream("src/test/resources/properties/oneway.property"));
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -114,16 +136,3 @@ public class RunnerLogin extends ExcelFramework {
 	}
 
 }
-
-/*
- * Error ID's
- * 
- * create_first_name_error create_last_name_error create_email_error
- * 
- * //h5[normalize-space()='Password must be at least 6 characters.'] //Relative
- * Xpath for error in password
- * 
- * //h5[normalize-space()='Passwords do not match.'] //Confirm password doesnt
- * match
- * 
- */
