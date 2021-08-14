@@ -1,10 +1,6 @@
 package oneway;
-
 import org.testng.annotations.Test;
 import base.ExcelFramework;
-import base.calendarSelector;
-import base.calendarSelector;
-
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.BeforeTest;
 import java.io.FileInputStream;
@@ -31,22 +27,16 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeMethod;
 
-public class RunnerOneWay extends ExcelFramework {
+public class RunnerOneWay2 extends ExcelFramework {
 
-	public RunnerOneWay(String pathWithFileName) {
+	public RunnerOneWay2(String pathWithFileName) {
 		super(pathWithFileName);
 	}
 
 	public WebDriver driver;
 
 	@Test(dataProvider = "dp")
-	public void searchFlights(
-			String from, 
-			String to, 
-			String departureDate, 
-			String adults, 
-			String children, 
-			String infants,
+	public void bookFlights(
 			String title,
 			String firstname,
 			String lastname,
@@ -63,38 +53,22 @@ public class RunnerOneWay extends ExcelFramework {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-
+		WebDriverWait wt=new WebDriverWait(driver,400);
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-		driver.get(prop.getProperty("url"));
-		driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
-		driver.findElement(By.id("wzrk-cancel")).click();
-		driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
-		driver.findElement(By.xpath(prop.getProperty("from"))).sendKeys(from); // Please enter first name using letters
-		driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
-		driver.findElement(By.className("ui-menu-item")).click();
-		driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
-		driver.findElement(By.xpath(prop.getProperty("to"))).sendKeys(to); // Please enter first name using letters
-		Thread.sleep(2000);
-		Actions ac = new Actions(driver);
-		ac.sendKeys(Keys.ARROW_DOWN).sendKeys(Keys.ENTER).perform();
-		driver.findElement(By.className("ui-menu-item")).click();
+		driver.get(prop.getProperty("url1"));
+		driver.findElement(By.xpath(prop.getProperty("book"))).click();
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-		driver.findElement(By.id("vc-close")).click();
-		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-		/*calendarSelector cs = new calendarSelector(driver);
-		cs.selectDate(departureDate,prop);*/
-		driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
-		driver.findElement(By.className("calendar-icon")).click();
-		Thread.sleep(4000);
-		WebElement deptEle = driver.findElement(By.xpath("/html[1]/body[1]/div[4]/div[3]/div[1]/form[1]/div[4]/div[1]/div[4]/div[1]/div[3]/div[2]/div[3]/div[7]"));
-		WebDriverWait wt = new WebDriverWait(driver,30);
-		wt.until(ExpectedConditions.visibilityOf(deptEle));
-		wt.until(ExpectedConditions.elementToBeClickable(deptEle));
-		deptEle.click();
+		WebElement E = driver.findElement(By.id(prop.getProperty("title")));
+		Select Port = new Select (E); 
+		Port.selectByValue("Miss");
+		driver.findElement(By.id(prop.getProperty("FirstName"))).sendKeys(firstname);
+		driver.findElement(By.id(prop.getProperty("LastName"))).sendKeys(lastname);
+		driver.findElement(By.id(prop.getProperty("Mobile"))).sendKeys(mobile);
+		driver.findElement(By.xpath(prop.getProperty("Email"))).sendKeys(email);
+		driver.findElement(By.id(prop.getProperty("ssrcb"))).click(); 
+		wt.until(ExpectedConditions.elementToBeClickable(By.id(prop.getProperty("PTB")))); 
+		driver.findElement(By.id(prop.getProperty("PTB"))).click();
 		
-		
-		driver.findElement(By.xpath(prop.getProperty("searchflights"))).click();
-		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 		}
 		
 
@@ -112,15 +86,12 @@ public class RunnerOneWay extends ExcelFramework {
 			e.printStackTrace();
 		}
 		ExcelFramework ex = new ExcelFramework(prop.getProperty("excelUrl"));
-		Object data[][] = new Object[3][11];
-		for (int i = 0; i < 3; i++)
-
-		{
-			for (int j = 0; j <11; j++) {
-				System.out.println(ex.readData("One way trip", i+1, j));
-				data[i][j] = ex.readData("One way trip", i+1, j);
+		Object data[][] = new Object[1][5];
+		
+			for (int j = 6; j <11; j++) {
+				System.out.println(ex.readData("One way trip", 1, j));
+				data[0][j-6] = ex.readData("One way trip", 1, j);
 			}
-		}
 		
 		return data;
 	}
@@ -148,3 +119,4 @@ public class RunnerOneWay extends ExcelFramework {
 	}
 
 }
+
