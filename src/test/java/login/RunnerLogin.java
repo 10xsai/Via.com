@@ -52,11 +52,14 @@ public class RunnerLogin extends ExcelFramework {
 
 
 		driver.manage().timeouts().implicitlyWait(8, TimeUnit.SECONDS);
-
-		driver.findElement(By.xpath(prop.getProperty("emailid"))).sendKeys(email); // Please enter first name using letters
-																				// only.
+		
+		// To insert the value of email from excel sheet 
+		driver.findElement(By.xpath(prop.getProperty("emailid"))).sendKeys(email); 
+											
+		// To insert the value of password from excel sheet
 		driver.findElement(By.xpath(prop.getProperty("password"))).sendKeys(pwd);
-
+		
+		//to click the login button
 		driver.findElement(By.xpath(prop.getProperty("loginbutton"))).click();
 
 		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
