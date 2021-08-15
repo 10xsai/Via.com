@@ -58,6 +58,8 @@ public class RunnerMultiCity extends ExcelFramework {
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		driver.get(prop.getProperty("url"));
 		driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
+		
+		// To close the pop up 
 		driver.findElement(By.id("wzrk-cancel")).click();
 
 
@@ -67,8 +69,8 @@ public class RunnerMultiCity extends ExcelFramework {
 		
 		driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
 		
-		driver.findElement(By.xpath(prop.getProperty("from"))).sendKeys(email); // Please enter first name using letters
-																				// only.
+		driver.findElement(By.xpath(prop.getProperty("from"))).sendKeys(email); 
+																			
 		driver.findElement(By.xpath(prop.getProperty("password"))).sendKeys(firstname);
 
 		driver.findElement(By.xpath(prop.getProperty("loginbutton"))).click();
