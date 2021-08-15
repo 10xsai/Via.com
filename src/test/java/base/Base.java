@@ -11,10 +11,12 @@ import org.testng.annotations.BeforeTest;
 public class Base {
 	public WebDriver driver;
 
-	//This method gets executed after every test case
+	// This method gets executed before every test case
+	
 	@BeforeTest
 	public void beforeTest() {
-		//to get properties from property file
+		
+		// To get properties from property file
 		Properties props = new Properties();
 		try {
 			props.load(new FileInputStream("src/test/resources/settings.property"));			
@@ -23,14 +25,15 @@ public class Base {
 			System.out.println(e);
 			driver.quit();
 		}
-		//sets system property for chrome driver
+		
+		// Sets system property for chrome driver
 		System.setProperty("webdriver.chrome.driver", props.getProperty("cpath"));	
 		ChromeDriver driver = new ChromeDriver();
 		
-		//takes the url from property file
+		//Takes the url from property file
 		driver.get(props.getProperty("url"));
 	}
-	//This method gets executed after execution of all test methods
+	// This method gets executed after execution of all test methods
 	@AfterTest
 	public void afterTest() {
 		driver.quit();
