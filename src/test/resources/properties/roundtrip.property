@@ -1,0 +1,86 @@
+#site url
+
+url=https://in.via.com/flight/search?returnType=return&month2=12&day2=13&year2=2021&date2=12/13/2021&destination=HYD&bdestination=HYD&destinationL=Hyderabad&destinationCity=&destinationCN=&source=BOM&bsource=BOM&sourceL=Mumbai&sourceCity=&sourceCN=&month=12&day=12&year=2021&date=12/12/2021&numAdults=1&numChildren=0&numInfants=0&validation_result=&domesinter=international&livequote=-1&flightClass=ALL&travType=INTL&routingType=ALL&preferredCarrier=ALL&prefCarrier=0&isAjax=false
+cpath=src\\test\\resources\\drivers\\chromedriver.exe
+excelUrl=src\\test\\resources\\dataSheets\\Via.com_DataDrivenTest.xlsx
+
+#ClickRoundTrip
+clickrt=/html/body/div[4]/div[3]/div/form/div[3]/div/div[2]/label
+
+# From xpath
+from=//*[@id="source"]
+
+# To xpath
+to=//*[@id="destination"]
+
+#Departure Icon
+depIcon=//*[@id="depart-cal"]/div[3]/div[2]/div[5]/div[6]
+
+# Departure xpath
+departureDate=(//div[@class='vc-cell ' and @data-date='15'])[1]
+
+
+#Return Icon
+retIcon=//*[@id="return-cal"]/div[3]/div[2]/div[5]/div[7]
+
+
+# Return xpath
+returnDate=(//div[@class='vc-cell ' and @data-date='15'])[1]
+
+
+//input
+# Adults xpath
+adults=/html/body/div[4]/div[3]/div/form/div[4]/div[4]/div[1]/div/div[1]
+
+# Children xpath
+children=/html/body/div[4]/div[3]/div/form/div[4]/div[4]/div[2]/div/div[1]
+
+# Infants xpath
+infants=/html/body/div[4]/div[3]/div/form/div[4]/div[4]/div[3]/div/div[1]
+
+# Search Flights Button xpath
+searchFlights=//*[@id="search-flight-btn"]
+
+ 
+
+#email xpath
+email=//*[@id="loginIdText"]
+
+#password xpath
+password=//*[@id="passwordText"]
+
+# login button xpath
+loginbutton=//*[@id="loginValidate"]
+
+#Select Flight 1
+flight1=//*[@id=\"searchResultContainer\"]/div[5]/div[1]/div[3]/div[1]/div[2]/div[2]/button
+
+#Select Flight 2
+flight2=//*[@id=\"searchResultContainer\"]/div[5]/div[2]/div[4]/div[1]/div[2]/div[2]/button
+
+#Book Flight
+bookflight=/html/body/div[5]/div/div[3]/div[2]
+
+#Title 
+title=//*[@id=\"adult1Title\"]
+
+# First Name
+firstname=//*[@id=\"adult1FirstName\"]
+
+# Last Name
+lastname=//*[@id=\"adult1Surname\"]
+
+#Mobile Number
+mobile=//*[@id=\"contactMobile\"]
+
+#Email ID
+email=//*[@id=\"contactEmail\"]
+
+#SSR Checkbox id
+ssrcb=//*[@id="msgInfoChkBox_label"]
+
+#Make Payment
+mp=//*[@id="makePayCTA"]
+
+#Proceed to booking
+ptb=//*[@id="confirmProceedPayBtn"]/span[2]
