@@ -46,8 +46,11 @@ public class RunnerLogin extends ExcelFramework {
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		driver.get(prop.getProperty("url"));
 		driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
+		
+		//to close the pop up on the website
 		driver.findElement(By.id("wzrk-cancel")).click();
 
+		//to click on the signin button
 		driver.findElement(By.xpath(prop.getProperty("signin"))).click();
 
 
