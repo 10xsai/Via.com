@@ -33,6 +33,7 @@ public class Base {
 		//Takes the url from property file
 		driver.get(props.getProperty("url"));
 	}
+	
 	// This method gets executed after execution of all test methods
 	@AfterTest
 	public void afterTest() {
