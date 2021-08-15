@@ -44,7 +44,11 @@ public class RunnerLogin extends ExcelFramework {
 		}
 
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		
+		//to take the URL from property file
 		driver.get(prop.getProperty("url"));
+		
+		
 		driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
 		
 		//to close the pop up on the website
