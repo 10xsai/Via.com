@@ -14,6 +14,7 @@ import org.testng.annotations.BeforeTest;
 
 public class Base {
 	public WebDriver driver;
+
 	public Properties prop;
 	
 	public Base(String propertyFilePath) {
@@ -26,14 +27,18 @@ public class Base {
 			e.printStackTrace();
 		}
 	}
-	
+	// This method gets executed before every test case
 	@BeforeMethod
 	public void beforeTest() {
-		System.setProperty("webdriver.chrome.driver", prop.getProperty("cpath"));
-		driver = new ChromeDriver();
-		driver.get(prop.getProperty("url"));
+		// Sets system property for chrome driver
+		System.setProperty("webdriver.chrome.driver", props.getProperty("cpath"));	
+		ChromeDriver driver = new ChromeDriver();
+		
+		//Takes the url from property file
+		driver.get(props.getProperty("url"));
 	}
-	
+		
+	// This method gets executed after execution of all test methods
 	@AfterMethod
 	public void afterTest() {
 		driver.quit();
