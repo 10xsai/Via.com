@@ -18,6 +18,7 @@ public class Base {
 		// To get properties from property file
 		Properties props = new Properties();
 		try {
+			// To load the property file
 			props.load(new FileInputStream("src/test/resources/settings.property"));			
 		}
 		catch (Exception e) {
