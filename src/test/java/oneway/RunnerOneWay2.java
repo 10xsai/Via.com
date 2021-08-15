@@ -1,5 +1,7 @@
 package oneway;
 import org.testng.annotations.Test;
+
+import base.Base;
 import base.ExcelFramework;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.BeforeTest;
@@ -18,22 +20,19 @@ import org.openqa.selenium.ElementNotVisibleException;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeMethod;
 
-public class RunnerOneWay2 extends ExcelFramework {
 
-	public RunnerOneWay2(String pathWithFileName) {
-		super(pathWithFileName);
+public class RunnerOneWay2 extends Base {
+
+	private static String properyFilePath = "src/test/resources/properties/oneway.property";
+
+	public RunnerOneWay2() {
+	super(properyFilePath);
 	}
 
-	public WebDriver driver;
 
 	@Test(dataProvider = "dp")
 	public void bookFlights(
@@ -43,16 +42,7 @@ public class RunnerOneWay2 extends ExcelFramework {
 			String mobile,
 			String email) throws InterruptedException {
 		
-		Properties prop = new Properties();
-		try {
-			prop.load(new FileInputStream("src/test/resources/properties/oneway.property"));
-		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		
 		WebDriverWait wt=new WebDriverWait(driver,400);
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		driver.get(prop.getProperty("url1"));
@@ -75,16 +65,7 @@ public class RunnerOneWay2 extends ExcelFramework {
 	
 	@DataProvider
 	public Object[][] dp() {
-		Properties prop = new Properties();
-		try {
-			prop.load(new FileInputStream("src/test/resources/properties/oneway.property"));
-		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		
 		ExcelFramework ex = new ExcelFramework(prop.getProperty("excelUrl"));
 		Object data[][] = new Object[1][5];
 		
@@ -96,27 +77,4 @@ public class RunnerOneWay2 extends ExcelFramework {
 		return data;
 	}
 
-	@BeforeMethod
-	public void beforeTest() {
-		Properties prop = new Properties();
-		try {
-			prop.load(new FileInputStream("src/test/resources/properties/oneway.property"));
-		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		System.setProperty("webdriver.chrome.driver", prop.getProperty("cpath"));
-		driver = new ChromeDriver();
-	}
-
-	@AfterMethod
-	public void afterTest() throws Exception {
-		Thread.sleep(2000);
-		 //driver.close();
-	}
-
 }
-
