@@ -14,7 +14,7 @@ public class Base {
 	//This method gets executed after every test case
 	@BeforeTest
 	public void beforeTest() {
-		//to get properties from properties file
+		//to get properties from property file
 		Properties props = new Properties();
 		try {
 			props.load(new FileInputStream("src/test/resources/settings.property"));			
@@ -26,9 +26,11 @@ public class Base {
 		//sets system property for chrome driver
 		System.setProperty("webdriver.chrome.driver", props.getProperty("cpath"));	
 		ChromeDriver driver = new ChromeDriver();
+		
+		//takes the url from property file
 		driver.get(props.getProperty("url"));
 	}
-	
+	//This method gets executed after execution of all test methods
 	@AfterTest
 	public void afterTest() {
 		driver.quit();
