@@ -10,8 +10,8 @@ import org.testng.annotations.BeforeTest;
 
 public class Base {
 	public WebDriver driver;
-	// This method gets executed before every test case
 	
+	// This method gets executed before every test case
 	@BeforeTest
 	public void beforeTest() {
 		
