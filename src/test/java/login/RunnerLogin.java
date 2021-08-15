@@ -27,13 +27,17 @@ public class RunnerLogin extends ExcelFramework {
 	public RunnerLogin(String pathWithFileName) {
 		super(pathWithFileName);
 	}
-
+	
+	// To declare the web driver
 	public WebDriver driver;
 
+	
 	@Test(dataProvider = "dp")
 	public void f(String email, String pwd) {
+		
 		Properties prop = new Properties();
 		try {
+			// Setting path to Login property file
 			prop.load(new FileInputStream("src/test/resources/properties/login.property"));
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
@@ -42,7 +46,8 @@ public class RunnerLogin extends ExcelFramework {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-
+		
+		// Implicit wait declaration
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		
 		// To take the URL from property file
@@ -72,7 +77,7 @@ public class RunnerLogin extends ExcelFramework {
 		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 	}
 
-	
+	// To provide data for testing purpose from excel sheet
 	@DataProvider
 	public Object[][] dp() {
 		Properties prop = new Properties();
@@ -85,10 +90,13 @@ public class RunnerLogin extends ExcelFramework {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		
+		// Declaring excel framework
 		ExcelFramework ex = new ExcelFramework(prop.getProperty("excelUrl"));
 		int rowCount = ex.getLastRowNum("Login");
 		Object data[][] = new Object[rowCount][2];
 
+	
 		for (int i = 1; i < rowCount -1; i++)
 
 		{
