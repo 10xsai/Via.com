@@ -59,12 +59,13 @@ public class RunnerMultiCity extends ExcelFramework {
 		driver.get(prop.getProperty("url"));
 		driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
 		
-		// To close the pop up 
+		// To close the pop up window on the website
 		driver.findElement(By.id("wzrk-cancel")).click();
 
 
 		driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
 		
+		// To click on the Multi City button
 		driver.findElement(By.xpath(prop.getProperty("multicitybtn"))).click();
 		
 		driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
