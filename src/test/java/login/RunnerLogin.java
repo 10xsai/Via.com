@@ -45,16 +45,16 @@ public class RunnerLogin extends ExcelFramework {
 
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		
-		//to take the URL from property file
+		// To take the URL from property file
 		driver.get(prop.getProperty("url"));
 		
 		
 		driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
 		
-		//to close the pop up on the website
+		// To close the pop up on the website
 		driver.findElement(By.id("wzrk-cancel")).click();
 
-		//to click on the signin button
+		// To click on the signin button
 		driver.findElement(By.xpath(prop.getProperty("signin"))).click();
 
 
@@ -66,7 +66,7 @@ public class RunnerLogin extends ExcelFramework {
 		// To insert the value of password from excel sheet
 		driver.findElement(By.xpath(prop.getProperty("password"))).sendKeys(pwd);
 		
-		//to click the login button
+		// To click the login button
 		driver.findElement(By.xpath(prop.getProperty("loginbutton"))).click();
 
 		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
