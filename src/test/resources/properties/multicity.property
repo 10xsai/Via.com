@@ -1,24 +1,51 @@
 #site url
-
-url=https://in.via.com/
+url=https://in.via.com/flight/search?returnType=multi&source_1=BOM&bsource_1=BOM&sourceL_1=Mumbai,Mumbai&destination_1=HYD&bdestination_1=HYD&destinationL_1=Hyderabad,Hyderabad&month_1=8&day_1=24&year_1=2021&date_1=8/24/2021&source_2=HYD&bsource_2=HYD&sourceL_2=Hyderabad,Hyderabad&destination_2=DEL&bdestination_2=DEL&destinationL_2=Delhi,Delhi&month_2=8&day_2=28&year_2=2021&date_2=8/28/2021&numFlights=2&numAdults=1&numChildren=0&numInfants=0&validation_result=&domesinter=international&livequote=-1&flightClass=ALL&travType=INTL&routingType=ALL&preferredCarrier=&prefCarrier=0&isAjax=false
+#url=https://in.via.com/
 cpath=src\\test\\resources\\drivers\\chromedriver.exe
 excelUrl=src\\test\\resources\\dataSheets\\Via.com_DataDrivenTest.xlsx
 
 # Multi-city button xpath
 multicitybtn=/html/body/div[4]/div[3]/div/form/div[3]/div/div[3]/label
 
-# Login button xpath
-signin=//div[contains(text(),'Sign In')]
+# flight1 button xpath
+flight1btn=//*[@id="multi-city-label-0"]
 
-# Login button xpath
-signup=//span[normalize-space()='SIGN UP']
+# From xpath
+from=//*[@id="source-0"]
 
- 
-#email id
-emailid=//*[@id="loginIdText"]
+# To xpath
+to=//*[@id="destination-0"]
 
-#password id
-password=//*[@id="passwordText"]
 
-# login button id
-loginbutton=//*[@id="loginValidate"]
+# searchFlight xpath
+searchFlight=//*[@id="search-flight-btn"]
+
+#flight1 select button xpath
+flight1=//*[@id="searchResultContainer"]/div[4]/div[1]/div[3]/div[1]/div[2]/div[2]/button
+
+#flight2 select button xpath
+flight2=//*[@id=\"searchResultContainer\"]/div[4]/div[2]/div[13]/div[1]/div[2]/div[2]/button
+
+#bookFlight button xpath
+bookFlight=/html/body/div[5]/div/div[3]/div[2]
+
+#title xpath
+title=//*[@id="adult1Title"]
+
+#firstname xpath
+firstname=//*[@id="adult1FirstName"]
+
+#lastname xpath
+lastname=//*[@id="adult1Surname"]
+
+#mobile number xpath
+mobile=//*[@id="contactMobile"]
+
+#email xpath
+email=//*[@id="contactEmail"]
+
+#checkbox xpath
+checkbox=//*[@id="msgInfoChkBox_label"]
+
+#proceed to bookings xpath
+proceed=//*[@id="makePayCTA"]

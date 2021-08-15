@@ -5,29 +5,9 @@ import org.testng.annotations.Test;
 import base.Base;
 import base.ExcelFramework;
 import org.testng.annotations.DataProvider;
-import org.testng.annotations.BeforeTest;
-
-import java.beans.Visibility;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.util.Properties;
 import java.util.concurrent.TimeUnit;
-import org.apache.poi.xssf.usermodel.XSSFSheet;
-import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
-import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeMethod;
 
 public class RunnerDomesticHotel extends Base {
 	private static String properyFilePath = "src/test/resources/properties/DomesticHotel.property";
@@ -56,10 +36,10 @@ public class RunnerDomesticHotel extends Base {
 			String email
 			) throws InterruptedException {
 		
-		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(50, TimeUnit.SECONDS);
 		driver.findElement(By.xpath(prop.getProperty("selectroomsbtn"))).click();
 		
-		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(50, TimeUnit.SECONDS);
 		driver.findElement(By.xpath(prop.getProperty("bookroombtn"))).click();
 		
 		Select sel = new Select(driver.findElement(By.xpath(prop.getProperty("title1"))));
@@ -71,8 +51,10 @@ public class RunnerDomesticHotel extends Base {
 		driver.findElement(By.xpath(prop.getProperty("pannumber"))).sendKeys(pannumber);
 		driver.findElement(By.xpath(prop.getProperty("mobile"))).sendKeys(mobile);
 		driver.findElement(By.xpath(prop.getProperty("email"))).sendKeys(email);
-		driver.findElement(By.xpath(prop.getProperty("readterms"))).click(); 
+		driver.findElement(By.xpath(prop.getProperty("readterms"))).click();
+		Thread.sleep(4000);
 		driver.findElement(By.xpath(prop.getProperty("proceed"))).click();
+		Thread.sleep(4000);
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		driver.findElement(By.id(prop.getProperty("makePayment"))).click();
 		
@@ -89,9 +71,6 @@ public class RunnerDomesticHotel extends Base {
 				  data[i-2][j] = ex.readData("Domestic Hotel Booking", i, j); 
 				 } 
 			  }
-		  
 		  return data;
-		 
 	}
-
 }
