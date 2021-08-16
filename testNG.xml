@@ -16,19 +16,19 @@
       <class name="oneway.RunnerOneWay"/>
     </classes>
   </test> <!-- Test -->
-  <test thread-count="5" name="OneWay2">
-    <classes>
-      <class name="oneway.RunnerOneWay2"/>
-    </classes>
-  </test> <!-- Test -->
   <test thread-count="5" name="RoundTrip">
     <classes>
       <class name="roundtrip.RunnerRoundTrip"/>
     </classes>
   </test> <!-- Test -->
-  <test thread-count="5" name="MultiCity">
+  <test thread-count="5" name="Domestic Hotel">
     <classes>
-      <class name="multicity.RunnerMultiCity"/>
+      <class name="domesticHotel.RunnerDomesticHotel"/>
+    </classes>
+  </test> <!-- Test -->
+  <test thread-count="5" name="International Hotel">
+    <classes>
+      <class name="internationalHotel.RunnerInternationalHotels"/>
     </classes>
   </test> <!-- Test -->
   

@@ -1,16 +1,18 @@
 package login;
 
 import org.testng.annotations.Test;
+
+import base.Base;
 import base.ExcelFramework;
 import org.testng.annotations.DataProvider;
 import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 
-public class RunnerLogin extends ExcelFramework {
-
-	public RunnerLogin(String pathWithFileName) {
-		super(pathWithFileName);
+public class RunnerLogin extends Base {
+	private static String properyFilePath = "src/test/resources/properties/login.property";
+	
+	public RunnerLogin() {
+		super(properyFilePath);
 	}
 
 	@Test(dataProvider = "dp")
@@ -34,16 +36,6 @@ public class RunnerLogin extends ExcelFramework {
 	
 	@DataProvider
 	public Object[][] dp() {
-		Properties prop = new Properties();
-		try {
-			prop.load(new FileInputStream("src/test/resources/properties/login.property"));
-		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
 		ExcelFramework ex = new ExcelFramework(prop.getProperty("excelUrl"));
 		int rowCount = ex.getLastRowNum("Login");
 		Object data[][] = new Object[rowCount][2];

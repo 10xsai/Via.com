@@ -1,0 +1,111 @@
+#site url
+
+url=https://in.via.com/hotels
+#url=https://in.via.com/hotels/search/5C271/08-25-2021/08-26-2021/1/2-0/null/137
+cpath=src\\test\\resources\\drivers\\chromedriver.exe
+excelUrl=src\\test\\resources\\dataSheets\\Via.com_DataDrivenTest.xlsx
+
+# Hotel xpath
+hotel=//div[@id='Hotels']//a[contains(@class,'')]
+
+# Destination xpath
+destination=//input[@id='destination']
+
+# checkin xpath
+checkin=//input[@id='checkIn']
+
+# checkout xpath
+checkout=//input[@id='checkOut']
+
+# SelectRoom button
+searchHotel=/html/body/div[3]/div[3]/div/form/div[3]/div/div[10]/div[3]
+
+# Rooms and guests xpath
+roomsandguests=//div[contains(@class,'js-room')]
+
+# Nationality xpath
+Nationality=//select[@id='nationalityCountry']
+
+# Residence xpath
+residence=//select[@id='residenceCountry']
+
+#Search Button xpath
+searchhotel=//div[contains(@class,'search-hotel u_vertAlignMiddle u_floatR')]
+
+# Select Rooms button
+selectroomsbtn=(//div[text()='Select Rooms'])[1]
+
+# Book Room button
+bookroombtn=//*[@id="roomHotel0"]/div[1]/div/div[3]/div[2]
+
+# Title xpath
+title1=//*[@id="room1Adult1"]/div/div/div[1]/label/select
+
+# firstname1 xpath
+firstname1=//input[@placeholder='First Name']
+
+# secondname1 xpath
+secondname1=//input[@placeholder='Second Name/Family Name']
+#title2
+title2=//*[@id="room1Adult2"]/div/div[1]/div[1]/label/select
+
+# firstname2 xpath
+firstname2=//*[@id="room1Adult2"]/div/div[1]/div[2]/input
+
+# secondname2 xpath
+secondname2=//*[@id="room1Adult2"]/div/div[1]/div[3]/input
+
+# passportInfo for adult2
+passportInfo2=//*[@id="Room0AdultPassportNAT1"]
+
+#passportNumber for adult2
+passportNumber2=//*[@id="Room0AdultPassportNUM1"]
+
+#expiryDay for adult2
+expiryDay2=//*[@id="room1Adult2Pday"]
+
+#expiryMonth for adult2
+expiryMonth2=//*[@id="room1Adult2Pmonth"]
+
+#expiryYear for adult2
+expiryYear2=//*[@id="room1Adult2Pyear"]
+# pannumber xpath
+pannumber=//input[@placeholder='Pan Number']
+
+# passportInfo for adult1
+passportInfo1=//*[@id="Room0AdultPassportNAT0"]
+
+#passportNumber for adult1
+passportNumber1=//*[@id="Room0AdultPassportNUM0"]
+
+#expiryDay for adult1
+expiryDay1=room1Adult1Pday
+
+
+#expiryMonth for adult1
+expiryMonth1=room1Adult1Pmonth
+
+
+#expiryYear for adult1
+expiryYear1=room1Adult1Pyear
+
+# mobile id
+mobile=contactMobile
+
+# email id
+email=contactEmail
+
+# readterms xpath
+readterms=read_terms_label
+
+# proceed xpath
+proceed=makePayCTA
+
+# Confirm Proceed Button id
+makePayment=confirmProceedPayBtn
+
+#successful selection of hotel
+hotelSelected=//*[@id="editDet"]/div[1]/div[1]/span
+
+#successful booking of hotel
+hotelBooked=//*[@id="confirmProceedPayBtn"]

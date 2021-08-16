@@ -6,7 +6,9 @@ import java.io.IOException;
 import java.util.Properties;
 
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeMethod;
@@ -27,15 +29,23 @@ public class Base {
 		}
 	}
 	
+	public void checkBlank (WebElement ele, String elemName){
+		if(ele.getText()==""){
+			Assert.assertEquals(elemName + " is blank", elemName + " should not be blank");
+		}
+	}
+	
 	@BeforeMethod
 	public void beforeTest() {
 		System.setProperty("webdriver.chrome.driver", prop.getProperty("cpath"));
 		driver = new ChromeDriver();
+		driver.manage().window().maximize();
 		driver.get(prop.getProperty("url"));
 	}
 	
 	@AfterMethod
-	public void afterTest() {
+	public void afterTest() throws InterruptedException {
+		Thread.sleep(3000);
 		driver.quit();
 	}
 }

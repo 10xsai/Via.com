@@ -1,0 +1,82 @@
+#site url
+
+url=https://in.via.com/hotels
+#url=https://in.via.com/hotels/search/5C271/08-25-2021/08-26-2021/1/2-0/null/137
+cpath=src\\test\\resources\\drivers\\chromedriver.exe
+excelUrl=src\\test\\resources\\dataSheets\\Via.com_DataDrivenTest.xlsx
+
+# Hotel xpath
+hotel=//div[@id='Hotels']//a[contains(@class,'')]
+
+# Destination xpath
+destination=//input[@id='destination']
+
+# checkin xpath
+checkin=//input[@id='checkIn']
+
+# checkout xpath
+checkout=//input[@id='checkOut']
+
+# SelectRoom button
+searchHotel=/html/body/div[3]/div[3]/div/form/div[3]/div/div[10]/div[3]
+
+# Rooms and guests xpath
+roomsandguests=//div[contains(@class,'js-room')]
+
+# Nationality xpath
+Nationality=//select[@id='nationalityCountry']
+
+# Residence xpath
+residence=//select[@id='residenceCountry']
+
+#Search Button xpath
+searchhotel=//div[contains(@class,'search-hotel u_vertAlignMiddle u_floatR')]
+
+# Select Rooms button
+selectroomsbtn=(//div[text()='Select Rooms'])[1]
+
+# Book Room button
+bookroombtn=//*[@id="roomHotel0"]/div[1]/div/div[3]/div[2]
+
+# Title xpath
+title1=//*[@id="room1Adult1"]/div/div/div[1]/label/select
+
+# firstname1 xpath
+firstname1=//input[@placeholder='First Name']
+
+# secondname1 xpath
+secondname1=//input[@placeholder='Second Name/Family Name']
+
+# Title 2 xpath
+title2=//*[@id="room1Adult2"]/div/div/div[1]/label/select
+
+# firstname2 xpath
+firstname2=//*[@id="room1Adult2"]/div/div/div[2]/input
+
+# secondname2 xpath
+secondname2=//*[@id="room1Adult2"]/div/div/div[3]/input
+
+# pannumber xpath
+pannumber=//input[@placeholder='Pan Number']
+
+# mobile id
+mobile=contactMobile
+
+# email id
+email=contactEmail
+
+# readterms xpath
+readterms=read_terms_label
+
+# proceed xpath
+proceed=makePayCTA
+
+# Confirm Proceed Button id
+makePayment=confirmProceedPayBtn
+
+#successful selection of hotel
+hotelSelected=//*[@id="editDet"]/div[1]/div[1]/span
+
+#successful booking of hotel
+hotelBooked=//*[@id="confirmProceedPayBtn"]
+

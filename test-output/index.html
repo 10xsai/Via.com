@@ -26,7 +26,7 @@
       <span class="top-banner-title-font">Test results</span>
       <button class="button" id="button">Switch Retro Theme</button> <!-- button -->
       <br/>
-      <span class="top-banner-font-1">1 suite, 1 failed test</span>
+      <span class="top-banner-font-1">1 suite, 2 failed tests</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -51,7 +51,7 @@
               <ul>
                 <li>
                   <a href="#" class="navigator-link " panel-name="test-xml-Default_suite">
-                    <span>C:\Users\gdsvs\AppData\Local\Temp\testng-eclipse--1901405257\testng-customsuite.xml</span>
+                    <span>C:\Users\gdsvs\AppData\Local\Temp\testng-eclipse--1543679920\testng-customsuite.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -93,7 +93,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">1 method, 1 failed,   </span>
+                    <span class="method-stats">3 methods, 2 failed,   1 passed</span>
                   </li>
                   <li>
                     <span class="method-list-title failed">Failed methods</span>
@@ -104,10 +104,29 @@
                     <div class="method-list-content failed suite-Default_suite">
                       <span>
                         <img width="3%" src="failed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="multicity.RunnerMultiCity" hash-for-method="f">f</a> <!-- method navigator-link -->
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="domesticHotel.RunnerDomesticHotel" hash-for-method="hotels(457545abc, 28-Sep-2021, 29-Sep-2021, 1.0, 2.0, India, India, Mr, Anirudh, P K, BOFPT2628R, Mr, Mir, ...)">hotels(457545abc, 28-Sep-2021, 29-Sep-2021, 1.0, 2.0, India, India, Mr, Anirudh, P K, BOFPT2628R, Mr, Mir, ...)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="failed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="domesticHotel.RunnerDomesticHotel" hash-for-method="hotels(Pune, 28-Sep-2021, 29-Sep-2021, 1.0, 2.0, India, India, Mr, Anirudh, P K, BOFPT2628R, Mr, Mir, Taimu...)">hotels(Pune, 28-Sep-2021, 29-Sep-2021, 1.0, 2.0, India, India, Mr, Anirudh, P K, BOFPT2628R, Mr, Mir, Taimu...)</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content failed suite-Default_suite -->
+                  </li>
+                  <li>
+                    <span class="method-list-title passed">Passed methods</span>
+                    <span class="show-or-hide-methods passed">
+                      <a href="#" panel-name="suite-Default_suite" class="hide-methods passed suite-Default_suite"> (hide)</a> <!-- hide-methods passed suite-Default_suite -->
+                      <a href="#" panel-name="suite-Default_suite" class="show-methods passed suite-Default_suite"> (show)</a> <!-- show-methods passed suite-Default_suite -->
+                    </span>
+                    <div class="method-list-content passed suite-Default_suite">
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="domesticHotel.RunnerDomesticHotel" hash-for-method="hotels(Vizag, 28-Sep-2021, 29-Sep-2021, 1.0, 2.0, India, India, Mr, Anirudh, P K, BOFPT2628R, Mr, Mir, Taim...)">hotels(Vizag, 28-Sep-2021, 29-Sep-2021, 1.0, 2.0, India, India, Mr, Anirudh, P K, BOFPT2628R, Mr, Mir, Taim...)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content passed suite-Default_suite -->
                   </li>
                 </ul>
               </div> <!-- suite-section-content -->
@@ -122,22 +141,94 @@
           <div class="suite-Default_suite-class-failed">
             <div class="main-panel-header rounded-window-top">
               <img src="failed.png"/>
-              <span class="class-name">multicity.RunnerMultiCity</span>
+              <span class="class-name">domesticHotel.RunnerDomesticHotel</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="f">
-                  </a> <!-- f -->
-                  <span class="method-name">f</span>
-                  <div class="stack-trace">org.testng.internal.reflect.MethodMatcherException: 
-[public void multicity.RunnerMultiCity.f(java.lang.String,java.lang.String)] has no parameters defined but was found to be using a data provider (either explicitly specified or inherited from class level annotation).
-Data provider mismatch
-Method: f([Parameter{index=0, type=java.lang.String, declaredAnnotations=[]}, Parameter{index=1, type=java.lang.String, declaredAnnotations=[]}])
-Arguments: [(java.lang.String) BOM,(java.lang.String) HYD,(java.lang.String) 12-Aug-2021,(java.lang.String) 1.0,(java.lang.String) 0.0,(java.lang.String) 0.0,(java.lang.String) Mr,(java.lang.String) Harry,(java.lang.String) Potter,(java.lang.String) 1.23456789E9,(java.lang.String) abc@abc.com]
-	at org.testng.internal.reflect.DataProviderMethodMatcher.getConformingArguments(DataProviderMethodMatcher.java:43)
-	at org.testng.internal.Parameters.injectParameters(Parameters.java:914)
-	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:34)
+                  <a name="hotels(457545abc, 28-Sep-2021, 29-Sep-2021, 1.0, 2.0, India, India, Mr, Anirudh, P K, BOFPT2628R, Mr, Mir, ...)">
+                  </a> <!-- hotels(457545abc, 28-Sep-2021, 29-Sep-2021, 1.0, 2.0, India, India, Mr, Anirudh, P K, BOFPT2628R, Mr, Mir, ...) -->
+                  <span class="method-name">hotels</span>
+                  <span class="parameters">(457545abc, 28-Sep-2021, 29-Sep-2021, 1.0, 2.0, India, India, Mr, Anirudh, P K, BOFPT2628R, Mr, Mir, Taimur, 7560861963, anirudhkk2000@gmail.com)</span>
+                  <div class="stack-trace">org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;css selector&quot;,&quot;selector&quot;:&quot;.ui\-menu\-item&quot;}
+  (Session info: chrome=92.0.4515.131)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
+System info: host: &apos;DESKTOP-CU7FF5S&apos;, ip: &apos;192.168.43.54&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_291&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 92.0.4515.131, chrome: {chromedriverVersion: 92.0.4515.43 (8c61b7e2989f2..., userDataDir: C:\Users\gdsvs\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:60005}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 1d3f7655ff423e8a7445ed5b8715f740
+*** Element info: {Using=class name, value=ui-menu-item}
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
+	at java.lang.reflect.Constructor.newInstance(Unknown Source)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByClassName(RemoteWebDriver.java:412)
+	at org.openqa.selenium.By$ByClassName.findElement(By.java:389)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+	at domesticHotel.RunnerDomesticHotel.hotels(RunnerDomesticHotel.java:62)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.util.ArrayList.forEach(Unknown Source)
+	at org.testng.TestRunner.privateRun(TestRunner.java:794)
+	at org.testng.TestRunner.run(TestRunner.java:596)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+	at org.testng.TestNG.runSuites(TestNG.java:1063)
+	at org.testng.TestNG.run(TestNG.java:1031)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="hotels(Pune, 28-Sep-2021, 29-Sep-2021, 1.0, 2.0, India, India, Mr, Anirudh, P K, BOFPT2628R, Mr, Mir, Taimu...)">
+                  </a> <!-- hotels(Pune, 28-Sep-2021, 29-Sep-2021, 1.0, 2.0, India, India, Mr, Anirudh, P K, BOFPT2628R, Mr, Mir, Taimu...) -->
+                  <span class="method-name">hotels</span>
+                  <span class="parameters">(Pune, 28-Sep-2021, 29-Sep-2021, 1.0, 2.0, India, India, Mr, Anirudh, P K, BOFPT2628R, Mr, Mir, Taimur, 7560861963, anirudhkk2000@gmail.com)</span>
+                  <div class="stack-trace">org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of [[ChromeDriver: chrome on WINDOWS (d3d5841f4627d872b9b31f11ac4c5707)] -&gt; xpath: //input[@placeholder=&apos;Search By Hotel Name&apos;]] (tried for 30 second(s) with 500 milliseconds interval)
+Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
+System info: host: &apos;DESKTOP-CU7FF5S&apos;, ip: &apos;192.168.43.54&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_291&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 92.0.4515.131, chrome: {chromedriverVersion: 92.0.4515.43 (8c61b7e2989f2..., userDataDir: C:\Users\gdsvs\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:59719}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: d3d5841f4627d872b9b31f11ac4c5707
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:95)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:272)
+	at domesticHotel.RunnerDomesticHotel.hotels(RunnerDomesticHotel.java:71)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
 	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
 	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
 	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
@@ -164,10 +255,26 @@ Arguments: [(java.lang.String) BOM,(java.lang.String) HYD,(java.lang.String) 12-
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
           </div> <!-- suite-Default_suite-class-failed -->
+          <div class="suite-Default_suite-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">domesticHotel.RunnerDomesticHotel</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="hotels(Vizag, 28-Sep-2021, 29-Sep-2021, 1.0, 2.0, India, India, Mr, Anirudh, P K, BOFPT2628R, Mr, Mir, Taim...)">
+                  </a> <!-- hotels(Vizag, 28-Sep-2021, 29-Sep-2021, 1.0, 2.0, India, India, Mr, Anirudh, P K, BOFPT2628R, Mr, Mir, Taim...) -->
+                  <span class="method-name">hotels</span>
+                  <span class="parameters">(Vizag, 28-Sep-2021, 29-Sep-2021, 1.0, 2.0, India, India, Mr, Anirudh, P K, BOFPT2628R, Mr, Mir, Taimur, 7560861963, anirudhkk2000@gmail.com)</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Default_suite-class-passed -->
         </div> <!-- panel Default_suite -->
         <div panel-name="test-xml-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">C:\Users\gdsvs\AppData\Local\Temp\testng-eclipse--1901405257\testng-customsuite.xml</span>
+            <span class="header-content">C:\Users\gdsvs\AppData\Local\Temp\testng-eclipse--1543679920\testng-customsuite.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -176,7 +283,7 @@ Arguments: [(java.lang.String) BOM,(java.lang.String) HYD,(java.lang.String) 12-
 &lt;suite guice-stage=&quot;DEVELOPMENT&quot; name=&quot;Default suite&quot;&gt;
   &lt;test thread-count=&quot;5&quot; verbose=&quot;2&quot; name=&quot;Default test&quot;&gt;
     &lt;classes&gt;
-      &lt;class name=&quot;multicity.RunnerMultiCity&quot;/&gt;
+      &lt;class name=&quot;domesticHotel.RunnerDomesticHotel&quot;/&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- Default test --&gt;
 &lt;/suite&gt; &lt;!-- Default suite --&gt;
@@ -216,16 +323,24 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(1);
+data.addRows(3);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'f')
-data.setCell(0, 2, 'multicity.RunnerMultiCity')
-data.setCell(0, 3, 502);
+data.setCell(0, 1, 'hotels')
+data.setCell(0, 2, 'domesticHotel.RunnerDomesticHotel')
+data.setCell(0, 3, 75373);
+data.setCell(1, 0, 1)
+data.setCell(1, 1, 'hotels')
+data.setCell(1, 2, 'domesticHotel.RunnerDomesticHotel')
+data.setCell(1, 3, 39684);
+data.setCell(2, 0, 2)
+data.setCell(2, 1, 'hotels')
+data.setCell(2, 2, 'domesticHotel.RunnerDomesticHotel')
+data.setCell(2, 3, 20293);
 window.suiteTableData['Default_suite']= { tableData: data, tableDiv: 'times-div-Default_suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 502 ms</span>
+              <span class="suite-total-time">Total running time: 2 minutes</span>
               <div id="times-div-Default_suite">
               </div> <!-- times-div-Default_suite -->
             </div> <!-- times-div -->
@@ -250,6 +365,48 @@ return data;
             <span class="header-content">Methods in chronological order</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
+            <div class="chronological-class">
+              <div class="chronological-class-name">domesticHotel.RunnerDomesticHotel</div> <!-- chronological-class-name -->
+              <div class="configuration-method before">
+                <span class="method-name">beforeTest</span>
+                <span class="method-start">0 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">hotels(Vizag, 28-Sep-2021, 29-Sep-2021, 1.0, 2.0, India, India, Mr, Anirudh, P K, BOFPT2628R, Mr, Mir, Taim...)</span>
+                <span class="method-start">9239 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">afterTest</span>
+                <span class="method-start">84625 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">beforeTest</span>
+                <span class="method-start">88602 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">hotels(Pune, 28-Sep-2021, 29-Sep-2021, 1.0, 2.0, India, India, Mr, Anirudh, P K, BOFPT2628R, Mr, Mir, Taimu...)</span>
+                <span class="method-start">95243 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">afterTest</span>
+                <span class="method-start">134937 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">beforeTest</span>
+                <span class="method-start">138913 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">hotels(457545abc, 28-Sep-2021, 29-Sep-2021, 1.0, 2.0, India, India, Mr, Anirudh, P K, BOFPT2628R, Mr, Mir, ...)</span>
+                <span class="method-start">145054 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">afterTest</span>
+                <span class="method-start">165355 ms</span>
+              </div> <!-- configuration-method after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
       </div> <!-- main-panel-root -->

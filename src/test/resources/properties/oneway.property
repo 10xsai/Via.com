@@ -4,8 +4,6 @@ url=https://in.via.com/
 cpath=src\\test\\resources\\drivers\\chromedriver.exe
 excelUrl=src\\test\\resources\\dataSheets\\Via.com_DataDrivenTest.xlsx
 
-url2=https://in.via.com/flight/review/8b0c6c28-b598-4a0a-b6bd-969daf907515
-
 url1=https://in.via.com/flight/search?returnType=one-way&destination=DEL&bdestination=DEL&destinationL=Delhi,Delhi&destinationCity=&destinationCN=&source=BOM&bsource=BOM&sourceL=Mumbai,Mumbai&sourceCity=&sourceCN=&month=9&day=7&year=2021&date=9/7/2021&numAdults=1&numChildren=0&numInfants=0&validation_result=&domesinter=international&livequote=-1&flightClass=ALL&travType=DOM&routingType=ALL&preferredCarrier=ALL&prefCarrier=0&isAjax=false
 
 # From xpath
@@ -14,7 +12,7 @@ from=//*[@id="source"]
 # To xpath
 to=//*[@id="destination"]
 
-departure=(//div[@class='vc-cell ' and @data-date='15'])[1]
+departure=(//div[@class='vc-cell ' and @data-date='31'])[1]
 
 #calendarIcon
 calendarIcon=//*[@id="depart-cal"]/div[3]/div[2]/div[5]/div[6]
@@ -29,7 +27,7 @@ children=/html/body/div[4]/div[3]/div/form/div[4]/div[4]/div[2]/div/div[3]
 infants=/html/body/div[4]/div[3]/div/form/div[4]/div[4]/div[3]/div/div[3]
 
 # Search Flights Button xpath
-searchflights=//*[@id="loginIdText"]
+searchflights=//div[@id='search-flight-btn']
 
 #Book flight Button xpath
 book=//div[3]//div[1]//div[3]//div[2]//button[1]
@@ -49,10 +47,12 @@ Mobile=contactMobile
 #email xpath
 Email=//input[@id='contactEmail']
 
-#SSR Checkbox id
-ssrcb=msgInfoChkBox_label
+#SSR Checkbox xpath
+ssrcb=//label[@id='msgInfoChkBox_label']
 
 #proceed to booking ID
 PTB=makePayCTA
 
 
+# successfully clicked on search flight
+searchFlightSucccess=//*[@id="searchResultContainer"]/div[7]/div/div[1]/text()

@@ -1,6 +1,5 @@
 #site url
-
-url=https://in.via.com/flight/search?returnType=return&month2=12&day2=13&year2=2021&date2=12/13/2021&destination=HYD&bdestination=HYD&destinationL=Hyderabad&destinationCity=&destinationCN=&source=BOM&bsource=BOM&sourceL=Mumbai&sourceCity=&sourceCN=&month=12&day=12&year=2021&date=12/12/2021&numAdults=1&numChildren=0&numInfants=0&validation_result=&domesinter=international&livequote=-1&flightClass=ALL&travType=INTL&routingType=ALL&preferredCarrier=ALL&prefCarrier=0&isAjax=false
+url=https://in.via.com/
 cpath=src\\test\\resources\\drivers\\chromedriver.exe
 excelUrl=src\\test\\resources\\dataSheets\\Via.com_DataDrivenTest.xlsx
 
@@ -14,10 +13,10 @@ from=//*[@id="source"]
 to=//*[@id="destination"]
 
 #Departure Icon
-depIcon=//*[@id="depart-cal"]/div[3]/div[2]/div[5]/div[6]
+calendarIcon=//*[@id="depart-cal"]/div[3]/div[2]/div[5]/div[6]
 
 # Departure xpath
-departureDate=(//div[@class='vc-cell ' and @data-date='15'])[1]
+departure=(//div[@class='vc-cell ' and @data-date='15'])[1]
 
 
 #Return Icon
@@ -25,7 +24,7 @@ retIcon=//*[@id="return-cal"]/div[3]/div[2]/div[5]/div[7]
 
 
 # Return xpath
-returnDate=(//div[@class='vc-cell ' and @data-date='15'])[1]
+returnDate=(//div[@class='vc-cell ' and @data-date='25'])[1]
 
 
 //input
@@ -52,14 +51,15 @@ password=//*[@id="passwordText"]
 # login button xpath
 loginbutton=//*[@id="loginValidate"]
 
+
+
 #Select Flight 1
 flight1=//*[@id=\"searchResultContainer\"]/div[5]/div[1]/div[3]/div[1]/div[2]/div[2]/button
 
 #Select Flight 2
-flight2=//*[@id=\"searchResultContainer\"]/div[5]/div[2]/div[4]/div[1]/div[2]/div[2]/button
-
+flight2=//div[@class='returnResults']//div[3]//div[1]//div[2]//div[2]//button[1]
 #Book Flight
-bookflight=/html/body/div[5]/div/div[3]/div[2]
+bookflight=/html/body/div[6]/div/div[3]/div[2]
 
 #Title 
 title=//*[@id=\"adult1Title\"]
@@ -84,3 +84,12 @@ mp=//*[@id="makePayCTA"]
 
 #Proceed to booking
 ptb=//*[@id="confirmProceedPayBtn"]/span[2]
+
+#Clicked Search Flight Successfully
+searchFlightSuccessfull=//*[@id="searchResultContainer"]/div[5]/div[1]/div[1]
+
+#Traveler Details
+travellerDetails=//*[@id="mainForm"]/div[3]/div[1]/div[1]/div[2]
+
+#Card Details
+cardDetails=//*[@id="ccNum-allcardsuihandler"]
