@@ -27,14 +27,14 @@ public class Base {
 		}
 	}
 	
-	@BeforeTest
+	@BeforeMethod
 	public void beforeTest() {
 		System.setProperty("webdriver.chrome.driver", prop.getProperty("cpath"));
 		driver = new ChromeDriver();
 		driver.get(prop.getProperty("url"));
 	}
 	
-	@AfterTest
+	@AfterMethod
 	public void afterTest() {
 		driver.quit();
 	}
