@@ -13,8 +13,6 @@ public class RunnerLogin extends ExcelFramework {
 		super(pathWithFileName);
 	}
 
-	public WebDriver driver;
-
 	@Test(dataProvider = "dp")
 	public void f(String email, String pwd) {
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
